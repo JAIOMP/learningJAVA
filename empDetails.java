@@ -37,7 +37,14 @@ class empDetails{
 		for (int i = 0;i < side ;i++) {
 			System.out.println(createLine);
 		}
-	};
+	}
+	static void LeftAlignedTriangle(String symbol,int side){
+		String line = " ";
+		for (int i = 0;i < side;i++) {
+			line = line.concat(symbol);
+			System.out.println(line);
+		}
+	}
 	public static void main(String[] args) {
 		empDetails member = new empDetails(1001,"JAI OM");
 		System.out.println("person has id" +member.empId+ "and name" +member.name);
@@ -45,5 +52,7 @@ class empDetails{
 		System.out.println(fibo(2));
 		System.out.println("JAIOMPANDEY".lastIndexOf('E'));
 		printSquare("*",6);
+		System.out.println("*#######*".replaceAll("#"," "));
+		LeftAlignedTriangle("*",6);
 	}
 }
