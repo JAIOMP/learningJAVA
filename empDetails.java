@@ -45,6 +45,17 @@ class empDetails{
 			System.out.println(line);
 		}
 	}
+	static void hollowRectangle(String symbol,int height,int width){
+		String line = " ";
+		for (int i = 0; i < height; i++) {
+			for (int j = 0; j < width; j++)
+				if (i == 0 || j == 0 || i == height - 1 || j == width - 1)
+					System.out.print(symbol + line);
+				else
+					System.out.print(line + line);
+					System.out.println();
+				}		
+	}
 	public static void main(String[] args) {
 		empDetails member = new empDetails(1001,"JAI OM");
 		System.out.println("person has id" +member.empId+ "and name" +member.name);
@@ -54,5 +65,6 @@ class empDetails{
 		printSquare("*",6);
 		System.out.println("*#######*".replaceAll("#"," "));
 		LeftAlignedTriangle("*",6);
+		hollowRectangle("*",5,6);
 	}
 }
