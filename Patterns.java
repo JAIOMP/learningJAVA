@@ -39,6 +39,16 @@ class Patterns {
 		charGroup[position] = symbol;
 		return new String(charGroup); 
 	}
+	static String replaceCharForDiamond(int position,char symbol,String str,int count){
+		char[] charGroup = str.toCharArray();
+		if (count>0) {
+			charGroup[position-count] = symbol;
+			charGroup[position+count] = symbol;
+		}else{
+			charGroup[position] = symbol;
+		}
+		return new String(charGroup); 
+	}
 	static void RightAlignedTriangle(char symbol,int height){
 		String line = " ";
 		String newLine = makeLine(line,height);
@@ -57,11 +67,31 @@ class Patterns {
 			System.out.println(starLine);
 		}
 	}
+	static void diamond(int length){
+		int position = length/2;
+		int count = 0;
+		int secCount = 0;
+		String line = makeLine(" ",length);
+		while(secCount>=0){
+			if(count<=position){
+				System.out.println(replaceCharForDiamond(position,'*',line,count));		
+				line = replaceCharForDiamond(position,'*',line,count);
+				count++;
+				secCount = count-1;
+			} else {
+				System.out.println(replaceCharForDiamond(position,' ',line,secCount));		
+				line = replaceCharForDiamond(position,' ',line,secCount);
+				secCount--;
+			}
+		}
+	}
 	public static void main(String[] args) {
-		printSquare("*",6);
-		LeftAlignedTriangle("*",6);
-		hollowRectangle("*",5,6);
-		RightAlignedTriangle('*',7);
-		alternatePatterns(6,7);
+		// printSquare("*",6);
+		// LeftAlignedTriangle("*",6);
+		// hollowRectangle("*",5,6);
+		// RightAlignedTriangle('*',7);
+		// alternatePatterns(6,7);
+		// System.out.println(5/2);
+		diamond(7);
 	}
 }
