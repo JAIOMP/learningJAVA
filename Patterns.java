@@ -48,10 +48,20 @@ class Patterns {
 			newLine = eachLine;
 		}
 	}
+	static void alternatePatterns(int numberOfLines,int length){
+		String dashLine = makeLine("-",length);
+		String starLine = makeLine("*",length);
+		for (int i = 0;i < numberOfLines ;i++) {
+			if(dashLine.indexOf("*")==-1)
+			System.out.println(dashLine);
+			System.out.println(starLine);
+		}
+	}
 	public static void main(String[] args) {
 		printSquare("*",6);
 		LeftAlignedTriangle("*",6);
 		hollowRectangle("*",5,6);
 		RightAlignedTriangle('*',7);
+		alternatePatterns(6,7);
 	}
 }
