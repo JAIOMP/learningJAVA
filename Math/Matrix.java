@@ -1,48 +1,43 @@
-import java.util.Scanner;
 class Matrix {
 	int matrix[][];
-	int row,column; 
-
-	public Matrix(){
-
+	int row,column,count=0;
+	
+	public Matrix(int row,int column){
+		this.row = row;
+		this.column = column;
+		this.matrix = new int[this.row][this.column];
 	}
 
-	public void create(){
-		Scanner scan = new Scanner(System.in);
-		System.out.println("\n Enter row num");
-		
-		row = Integer.parseInt(scan.nextLine());
-
-		System.out.println("Enter column num");
-
-		column = Integer.parseInt(scan.nextLine());	
-
-		System.out.println("enter digit:");
-
-		matrix = new int[row][column];
-
-		for (int i=0;i<row ;i++ ) {
-			for (int j=0;j<column;j++) {
-
-				matrix[i][j] = scan.nextInt();
-
+	public void populate(int[] input){
+		for (int i=0;i<this.row ;i++ ) {
+			for (int j=0;j<this.column;j++) {
+				this.matrix[i][j] = input[count];
+				count++;
 			}
-		}
-	} 
-
-	public void display() {
-		System.out.println("\n The Matrix is :");
-		for (int i=0;i<row ;i++ ) {
-			for (int j=0;j<column;j++) {
-				System.out.println("\t" + matrix[i][j]);
-			}
-			System.out.println();
 		}
 	}
 
-	public static void main(String[] args) {
-		Matrix createMatrix = new Matrix();
-		createMatrix.create();
-		createMatrix.display();
-	}	
+	public Matrix add(Matrix first){
+		Matrix destination = new Matrix(this.row,this.column);
+		for (int i=0;i<first.row;i++) {
+			for (int j=0;j<first.column;j++) {
+				destination.matrix[i][j] = this.matrix[i][j]+first.matrix[i][j];				
+			}
+		}
+		return destination;
+	}
+
+	public Matrix multiply(Matrix first){
+		Matrix destination = new Matrix(this.row,this.column);
+		for (int i = 0; i < first.row; i++) {
+           for (int j = 0; j < this.column; j++) {
+               for (int k = 0; k < first.column; k++) {
+                   destination[i][j] += first.matrix[i][k] * this.matrix[k][j];
+               }
+           }
+       }
+       return destination;
+
+	}
+
 }
