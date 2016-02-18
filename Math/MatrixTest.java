@@ -36,6 +36,15 @@ public class MatrixTest {
 		int row = 2,column=2;
 		int[] firstArrayInput = {1,2,3,4};
 		int[] secondArrayInput = {2,3,4,5};
+		int[][] expectedMatrix = {{11,16},{19,28}};
+		Matrix firstMatrix  = new Matrix(row,column);
+		Matrix secondMatrix = new Matrix(row,column);
+		firstMatrix.populate(firstArrayInput);
+		secondMatrix.populate(secondArrayInput);
+		Matrix destinationMatrix = firstMatrix.multiply(secondMatrix);
+		
+		assertArrayEquals(destinationMatrix.matrix,expectedMatrix);
+
 	} 
 
 };

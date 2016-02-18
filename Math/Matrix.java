@@ -32,12 +32,11 @@ class Matrix {
 		for (int i = 0; i < first.row; i++) {
            for (int j = 0; j < this.column; j++) {
                for (int k = 0; k < first.column; k++) {
-                   destination[i][j] += first.matrix[i][k] * this.matrix[k][j];
+                   destination.matrix[i][j] += first.matrix[i][k] * this.matrix[k][j];
                }
            }
        }
        return destination;
-
 	}
 
 }
