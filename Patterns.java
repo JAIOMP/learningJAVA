@@ -86,12 +86,11 @@ class Patterns {
 		}
 	}
 	public static void main(String[] args) {
-		// printSquare("*",6);
-		// LeftAlignedTriangle("*",6);
-		// hollowRectangle("*",5,6);
-		// RightAlignedTriangle('*',7);
-		// alternatePatterns(6,7);
-		// System.out.println(5/2);
+		printSquare("*",6);
+		LeftAlignedTriangle("*",6);
+		hollowRectangle("*",5,6);
+		RightAlignedTriangle('*',7);
+		alternatePatterns(6,7);
 		diamond(7);
 	}
 }
