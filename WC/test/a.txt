@@ -1,3 +1,1 @@
-Ram is a good boy.
-He is a briliant in class.
-He is good in sport as well as in study;
+"This small example 			shows\nyou how to write a  unit test. your 			 need to have 	\na 	JDK installed and a text editor. (in 			general it \nis recommended 		 to 	 use	a  build tool for building \nyour software and 		running		 the tests.)";
