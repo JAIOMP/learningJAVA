@@ -1,7 +1,3 @@
-import java.io.*;
-import java.lang.*;
-
-
 public class CountWord {
 	String data;
 	public CountWord(String fileData){
@@ -13,7 +9,7 @@ public class CountWord {
 		return lines.length-1;
 	}
 	public int wordCount(){
-		String[] words = this.data.split(" ");
+		String[] words = this.data.split("\\s+");
 		return words.length;
 	}
 	public int charCount() {
