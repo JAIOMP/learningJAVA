@@ -4,5 +4,6 @@ class worldCricInfo{
 		cricketTeam.teamInfo();
 		cricketTeam.iccRating(126);
 		cricketTeam.hasWorldCup(2);
+		
 	}	
 }

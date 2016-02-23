@@ -1,6 +1,6 @@
 class Cricket{
-	String team;
-	String captain;
+	private String team = "hjsdhf";
+	private String captain = "werutuor";
 	
 	public Cricket (String teamName,String captainName){
 		this.team = teamName;
@@ -17,6 +17,6 @@ class Cricket{
 
 	public void hasWorldCup(int total){
 		System.out.println("won world cup "+total+" times");
-	}	
+	}
 
 }
